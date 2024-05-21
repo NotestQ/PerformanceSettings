@@ -55,7 +55,8 @@ namespace PerformanceSettings.Settings
                 try
                 {
                     // unknown error at start, ignore it
-                    if (baseFOVTraverse?.Value != null) baseFOVTraverse.Value = GameHandler.Instance.SettingsHandler.GetSetting<FOVSetting>().Value;
+                    
+                    if (baseFOVTraverse?.Value != null) baseFOVTraverse.Value = ContentSettings.API.SettingsLoader.GetSetting<FOVSetting>()!.Value;
                 }
                 catch (Exception e) { }
             }

@@ -33,12 +33,15 @@ namespace MoreSettings
             addSetting(new AntiAliasingSetting());
             addSetting(new PostProcessingSetting());
             addSetting(new FOVSetting());
-            addSetting(new CrouchingModeSetting());
-            addSetting(new UseItemKeybindSetting());
-            addSetting(new AimKeybindSetting());
-            addSetting(new ResetGraphicsToDefault());
-            addSetting(new ResetAudioToDefault());
-            addSetting(new ResetControlsToDefault());
+            addSetting(new ResetPerformanceToDefault());
+
+            addSetting(new CrouchingModeSetting(), "CONTROLS-QOL");
+            addSetting(new UseItemKeybindSetting(), "CONTROLS-QOL");
+            addSetting(new AimKeybindSetting(), "CONTROLS-QOL");
+            addSetting(new ResetControlsToDefault(), "CONTROLS-QOL");
+
+            addSetting(new ResetGraphicsToDefault(), "GRAPHICS-QOL");
+            addSetting(new ResetAudioToDefault(), "AUDIO-QOL");
 
             addPatches(new ShadowQualityPatch());
             addPatches(new VoiceVolumePatch());
@@ -69,8 +72,13 @@ namespace MoreSettings
             }
         }
 
-        public static void addSetting(Setting setting)
+        public static void addSetting(Setting setting, string tab = "PERFORMANCE", string? category = null)
         {
+<<<<<<< Updated upstream
+=======
+            SettingsLoader.RegisterSetting(tab, category, setting);
+
+>>>>>>> Stashed changes
             additionalSettings.Add(setting);
         }
 

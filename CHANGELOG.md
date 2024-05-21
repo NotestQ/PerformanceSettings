@@ -1,3 +1,19 @@
+<<<<<<< Updated upstream
+=======
+# 0.4.3
+- Moved: Some settings from performance to QOL tabs temporarily
+- Fixed: Some reset to default buttons not working properly
+- Fixed: Not being able to move and error spam
+
+# 0.4.2
+- Fixed: No dependency string for ContentSettings
+
+# 0.4.1
+- Replaced: Use ContentSettings instead of a "proprietary" patch
+- Moved: Settings from GRAPHICS to PERFORMANCE
+- Fixed: Missing settings are now visible
+
+>>>>>>> Stashed changes
 # 0.3.0 (Notest's Indirect Fork)
 - Added: ContentWarning plugin attribute and marked as VanillaCompatible
 - Added: Instance = this

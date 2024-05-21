@@ -44,7 +44,8 @@ namespace PerformanceSettings.Settings
             static void PatchCrouchingMode(PlayerController __instance)
             {
                 var playerTraverse = Traverse.Create(__instance).Field("player");
-                if (GameHandler.Instance.SettingsHandler.GetSetting<CrouchingModeSetting>().Value == 1 && playerTraverse != null)
+                
+                if (ContentSettings.API.SettingsLoader.GetSetting<CrouchingModeSetting>()!.Value == 1 && playerTraverse != null)
                 {
                     var player = playerTraverse.GetValue() as Player;
                     player.data.isCrouching = player.input.crouchIsPressed;

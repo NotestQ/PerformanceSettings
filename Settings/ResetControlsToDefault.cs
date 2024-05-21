@@ -14,10 +14,6 @@ namespace PerformanceSettings.Settings
         internal static TextMeshProUGUI titleComponent = null;
         internal static UIPageHandler pageHandler = null;
         internal static SettingsMenu menu = null;
-        public SettingCategory GetSettingCategory()
-        {
-            return SettingCategory.Controls;
-        }
 
         public string GetDisplayName()
         {

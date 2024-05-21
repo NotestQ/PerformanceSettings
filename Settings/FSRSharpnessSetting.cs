@@ -2,10 +2,11 @@
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
 using Zorro.Settings;
+using ContentSettings.API.Settings;
 
 namespace PerformanceSettings.Settings
 {
-    public class FSRSharpnessSetting : FloatSetting, IExposedSetting
+    public class FSRSharpnessSetting : FloatSetting, ICustomSetting
     {
         public SettingCategory GetSettingCategory()
         {

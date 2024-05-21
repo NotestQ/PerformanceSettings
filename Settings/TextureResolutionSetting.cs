@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using ContentSettings.API.Settings;
 using Zorro.Settings;
 using UnityEngine;
 
 namespace PerformanceSettings.Settings
 {
-    public class TextureResolutionSetting : EnumSetting, IExposedSetting
+    public class TextureResolutionSetting : EnumSetting, ICustomSetting
     {
         public override void ApplyValue()
         {

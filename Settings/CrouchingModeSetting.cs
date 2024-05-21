@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+using ContentSettings.API.Settings;
 using Zorro.Settings;
 using HarmonyLib;
 using PerformanceSettings.Settings.Type;
 
 namespace PerformanceSettings.Settings
 {
-    public class CrouchingModeSetting : EnumSetting, IExposedSetting, IPatch
+    public class CrouchingModeSetting : EnumSetting, ICustomSetting, IPatch
     {
         public override void ApplyValue()
         {

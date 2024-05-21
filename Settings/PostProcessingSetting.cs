@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+using ContentSettings.API.Settings;
 using UnityEngine.Rendering.Universal;
 using Zorro.Settings;
 using UnityEngine;
 
 namespace PerformanceSettings.Settings
 {
-    public class PostProcessingSetting : EnumSetting, IExposedSetting
+    public class PostProcessingSetting : EnumSetting, ICustomSetting
     {
         public override void ApplyValue()
         {

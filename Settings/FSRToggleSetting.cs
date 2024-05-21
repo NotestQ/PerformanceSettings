@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+using ContentSettings.API.Settings;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
 using Zorro.Settings;
 
 namespace PerformanceSettings.Settings
 {
-    public class FSRToggleSetting : EnumSetting, IExposedSetting
+    public class FSRToggleSetting : EnumSetting, ICustomSetting
     {
         public override void ApplyValue()
         {

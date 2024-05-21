@@ -1,3 +1,8 @@
+# 0.4.1
+- Replaced: Use ContentSettings instead of a "proprietary" patch
+- Moved: Settings from GRAPHICS to PERFORMANCE
+- Fixed: Missing settings are now visible
+
 # 0.3.0 (Notest's Indirect Fork)
 - Added: ContentWarning plugin attribute and marked as VanillaCompatible
 - Added: Instance = this

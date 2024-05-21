@@ -2,10 +2,11 @@
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
 using Zorro.Settings;
+using ContentSettings.API.Settings;
 
 namespace PerformanceSettings.Settings
 {
-    public class RenderScaleSetting : FloatSetting, IExposedSetting
+    public class RenderScaleSetting : FloatSetting, ICustomSetting
     {
         public SettingCategory GetSettingCategory()
         {

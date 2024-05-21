@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using ContentSettings.API.Settings;
+using UnityEngine;
 using Zorro.Settings;
 
 namespace PerformanceSettings.Settings
 {
-    internal class AimKeybindSetting : KeyCodeSetting, IExposedSetting
+    internal class AimKeybindSetting : KeyCodeSetting, ICustomSetting
     {
 
         public string GetDisplayName()

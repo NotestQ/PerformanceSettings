@@ -4,7 +4,7 @@
         <AssemblyName>Notest.PerformanceSettings</AssemblyName>
         <Product>PerformanceSettings</Product>
         <!-- Change to whatever version you're currently on. -->
-        <Version>0.4.1</Version>
+        <Version>0.4.2</Version>
     </PropertyGroup>
 
     <!-- Project Properties -->

@@ -1,8 +1,8 @@
-# More Settings
-Adds performance settings such as graphics settings like render scale, FSR, texture resolution and etc.
+# Performance Settings
+Adds performance (and other QoL) settings such as render scale, FSR, texture resolution, more keybind remappings and etc.
 These settings can be use to lower the graphics settings of the game to obtain desired performance or better graphics.
 
-NOTE: these settings will impact both the camera and the player
+NOTE: these settings will impact both the camera and the player, I am unsure if that can be changed.
 
 ## Attributions
 This mod is an indirect fork of [MoreSettings](https://github.com/Jasson9/ContentWarning-MoreSettings) for Content Warning by [Jasson9](https://github.com/Jasson9) as it seemed to be unmaintained.

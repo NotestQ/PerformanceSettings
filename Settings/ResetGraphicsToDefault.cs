@@ -5,11 +5,13 @@ using Zorro.Settings;
 using UnityEngine;
 using TMPro;
 using System.Reflection;
+using ContentSettings.API.Settings;
 using Zorro.UI;
+using IntSetting = Zorro.Settings.IntSetting;
 
 namespace PerformanceSettings.Settings
 {
-    internal class ResetGraphicsToDefault: StringSetting, IExposedSetting, IPatch
+    internal class ResetGraphicsToDefault: StringSetting, ICustomSetting, IPatch
     {
         internal static TextMeshProUGUI titleComponent = null;
         internal static UIPageHandler pageHandler = null;

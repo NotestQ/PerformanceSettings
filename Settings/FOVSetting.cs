@@ -1,4 +1,5 @@
 ﻿using System;
+using ContentSettings.API.Settings;
 using Unity.Mathematics;
 using Zorro.Settings;
 using PerformanceSettings.Settings.Type;
@@ -7,7 +8,7 @@ using UnityEngine;
 
 namespace PerformanceSettings.Settings
 {
-    public class FOVSetting : FloatSetting, IExposedSetting, IPatch
+    public class FOVSetting : FloatSetting, ICustomSetting, IPatch
     {
         static Traverse<float> baseFOVTraverse = null;
 

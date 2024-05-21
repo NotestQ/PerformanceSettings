@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ContentSettings.API.Settings;
 using UnityEngine.Rendering.Universal;
 using Zorro.Settings;
 using UnityEngine;
@@ -6,7 +7,7 @@ using UnityEngine;
 
 namespace PerformanceSettings.Settings
 {
-    public class AntiAliasingSetting : EnumSetting, IExposedSetting
+    public class AntiAliasingSetting : EnumSetting, ICustomSetting
     {
         public override void ApplyValue()
         {

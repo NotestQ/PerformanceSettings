@@ -8,6 +8,7 @@ using Setting = Zorro.Settings.Setting;
 using PerformanceSettings.Settings.Type;
 using PerformanceSettings.Settings;
 using PerformanceSettings;
+using ContentSettings.API;
 // ReSharper disable InconsistentNaming
 
 namespace MoreSettings
@@ -51,7 +52,7 @@ namespace MoreSettings
             //addPatches(new ResetToDefault());
 
             harmony ??= new Harmony(MyPluginInfo.PLUGIN_GUID);
-            harmony.PatchAll(typeof(MainPatch));
+
             ApplyPatches();
         }
 
@@ -85,36 +86,6 @@ namespace MoreSettings
         internal static void addPatches(IPatch patch)
         {
             patches.Add(patch);
-        }
-    }
-
-    internal class MainPatch
-    {
-
-        [HarmonyPatch(typeof(SettingsHandler),MethodType.Constructor)]
-        [HarmonyPostfix]
-        static void PatchSettingsHandler(SettingsHandler __instance)
-        {
-            var settings = Traverse.Create(__instance).Field("settings").GetValue() as List<Setting>;
-            var settingsSaveLoad = Traverse.Create(__instance).Field("_settingsSaveLoad").GetValue() as ISettingsSaveLoad;
-            settings = settings.Concat(PerformanceSettings.additionalSettings).ToList();
-            Traverse.Create(__instance).Field("settings").SetValue(settings);
-            foreach (Setting setting in PerformanceSettings.additionalSettings)
-            {
-                setting.Load(settingsSaveLoad);
-                setting.ApplyValue();
-            }
-            Debug.Log("Settings Patch Applied [MoreSettings]");
-        }
-
-        [HarmonyPatch(typeof(Player),"Start")]
-        [HarmonyPostfix]
-        static void ApplySettingAtStart(Player __instance)
-        {
-            if(__instance.IsLocal == true)
-            {
-                Tools.ApplySettings();
-            }
         }
     }
 }

@@ -1,9 +1,6 @@
 ﻿using BepInEx;
 using HarmonyLib;
 using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
-using Zorro.Settings;
 using Setting = Zorro.Settings.Setting;
 using PerformanceSettings.Settings.Type;
 using PerformanceSettings.Settings;
@@ -75,11 +72,7 @@ namespace MoreSettings
 
         public static void addSetting(Setting setting, string tab = "PERFORMANCE", string? category = null)
         {
-<<<<<<< Updated upstream
-=======
             SettingsLoader.RegisterSetting(tab, category, setting);
-
->>>>>>> Stashed changes
             additionalSettings.Add(setting);
         }
 

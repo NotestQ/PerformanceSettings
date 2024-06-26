@@ -6,6 +6,7 @@ using PerformanceSettings.Settings.Type;
 using PerformanceSettings.Settings;
 using PerformanceSettings;
 using ContentSettings.API;
+using UnityEngine.SceneManagement;
 // ReSharper disable InconsistentNaming
 
 namespace MoreSettings
@@ -29,7 +30,8 @@ namespace MoreSettings
             addSetting(new FSRSharpnessSetting());
             addSetting(new TextureResolutionSetting());
             addSetting(new AntiAliasingSetting());
-            addSetting(new PostProcessingSetting());
+            var postProcessingSetting = new PostProcessingSetting();
+            addSetting(postProcessingSetting);
             addSetting(new FOVSetting());
             addSetting(new ResetPerformanceToDefault());
 
@@ -51,6 +53,8 @@ namespace MoreSettings
             harmony ??= new Harmony(MyPluginInfo.PLUGIN_GUID);
 
             ApplyPatches();
+
+            SceneManager.sceneLoaded += (_, _) => postProcessingSetting.ApplyValue();
         }
 
         internal void ApplyPatches()

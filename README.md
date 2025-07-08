@@ -1,4 +1,6 @@
 # Performance Settings
+This mod is old, unmaintained and likely broken.
+
 Adds performance (and other QoL) settings such as render scale, FSR, texture resolution, more keybind remappings and etc.
 These settings can be use to lower the graphics settings of the game to obtain desired performance or better graphics.
 

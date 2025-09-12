@@ -31,9 +31,7 @@ namespace MoreSettings
             addSetting(new FSRToggleSetting());
             addSetting(new FSRSharpnessSetting());
             addSetting(new TextureResolutionSetting());
-            addSetting(new AntiAliasingSetting());
             addSetting(new PostProcessingSetting());
-            addSetting(new FOVSetting());
             addSetting(new ResetPerformanceToDefault());
 
             addSetting(new CrouchingModeSetting(), "CONTROLS-QOL");

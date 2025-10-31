@@ -1,14 +1,12 @@
 ﻿using BepInEx;
 using HarmonyLib;
 using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
-using Zorro.Settings;
 using Setting = Zorro.Settings.Setting;
 using PerformanceSettings.Settings.Type;
 using PerformanceSettings.Settings;
 using PerformanceSettings;
 using ContentSettings.API;
+using UnityEngine.SceneManagement;
 // ReSharper disable InconsistentNaming
 
 namespace MoreSettings
@@ -32,7 +30,8 @@ namespace MoreSettings
             addSetting(new FSRSharpnessSetting());
             addSetting(new TextureResolutionSetting());
             addSetting(new AntiAliasingSetting());
-            addSetting(new PostProcessingSetting());
+            var postProcessingSetting = new PostProcessingSetting();
+            addSetting(postProcessingSetting);
             addSetting(new FOVSetting());
             addSetting(new ResetPerformanceToDefault());
 
@@ -54,6 +53,8 @@ namespace MoreSettings
             harmony ??= new Harmony(MyPluginInfo.PLUGIN_GUID);
 
             ApplyPatches();
+
+            SceneManager.sceneLoaded += (_, _) => postProcessingSetting.ApplyValue();
         }
 
         internal void ApplyPatches()
@@ -75,11 +76,7 @@ namespace MoreSettings
 
         public static void addSetting(Setting setting, string tab = "PERFORMANCE", string? category = null)
         {
-<<<<<<< Updated upstream
-=======
             SettingsLoader.RegisterSetting(tab, category, setting);
-
->>>>>>> Stashed changes
             additionalSettings.Add(setting);
         }
 
